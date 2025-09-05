@@ -15,6 +15,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.whatsapp.R
 
+import com.example.whatsapp.presentation.callscreen.FavouriteContact
+import com.example.whatsapp.presentation.callscreen.FavouriteItem
+
 @Preview(showSystemUi = true)
 @Composable
 fun FavouriteSection() {
@@ -38,16 +41,12 @@ fun FavouriteSection() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .horizontalScroll(rememberScrollState())
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(16.dp)
         ) {
             sampleFavouriteContacts.forEach { contact ->
-                FavouriteItem(contact) // ✅ using your separate FavouriteItem file
+                FavouriteItem(favouriteContact = contact) // ✅ pass parameter correctly
             }
         }
     }
 }
-
-data class FavouriteContact(
-    val image: Int,
-    val name: String
-)

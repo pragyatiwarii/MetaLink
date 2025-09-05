@@ -26,8 +26,8 @@ fun SplashScreen(navHostController: NavHostController) {
     // Navigate to welcome screen after 1 sec
     LaunchedEffect(Unit) {
         delay(1000)
-        navHostController.navigate(Routes.WelcomeScreen) {
-            popUpTo(Routes.SplashScreen) { inclusive = true }//Isme agar back karenge to splash screen nahi aayega
+        navHostController.navigate(Routes.WelcomeScreen.route) {
+            popUpTo(Routes.SplashScreen.route) { inclusive = true } // Prevent back navigation to Splash
         }
     }
 

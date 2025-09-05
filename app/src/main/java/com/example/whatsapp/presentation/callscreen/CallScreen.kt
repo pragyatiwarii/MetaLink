@@ -1,26 +1,15 @@
 package com.example.whatsapp.presentation.callscreen
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,12 +19,21 @@ import com.example.whatsapp.presentation.bottomnavigation.BottomNavigation
 @Preview(showSystemUi = true)
 @Composable
 fun CallScreen() {
+    val dummyCalls = listOf(
+        Call(R.drawable.salman_khan, "Salman Khan", "Yesterday, 10:45 AM", true),
+        Call(R.drawable.sharukh_khan, "Sharukh Khan", "Today, 9:30 AM", false),
+        Call(R.drawable.ajay_devgn, "Ajay Devgn", "Yesterday, 8:15 AM", true),
+        Call(R.drawable.sharadha_kapoor, "Shraddha Kapoor", "August 20, 7:45 AM", false),
+        Call(R.drawable.akshay_kumar, "Akshay Kumar", "Yesterday, 6:30 AM", true),
+        Call(R.drawable.bhuvan_bam, "Bhuvan Bam", "Today, 5:15 AM", false)
+    )
+
+    var isSearching by remember { mutableStateOf(false) }
+    var searchQuery by remember { mutableStateOf("") }
+    var showMenu by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
-            var isSearching by remember { mutableStateOf(false) }
-            var searchQuery by remember { mutableStateOf("") }
-            var showMenu by remember { mutableStateOf(false) }
-
             Column(modifier = Modifier.fillMaxWidth()) {
                 Row(
                     modifier = Modifier
@@ -133,17 +131,45 @@ fun CallScreen() {
                     modifier = Modifier.size(28.dp)
                 )
             }
-        },
+        }
+    ) { innerPadding ->
 
-        ) { innerPadding ->
-        // Placeholder body content
         Column(modifier = Modifier.padding(innerPadding)) {
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // If you have a separate FavouriteSection composable, call it here
+             FavouriteSection()
+
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(
+                onClick = {/* TODO */ },
+                colors = ButtonDefaults.buttonColors(containerColor = colorResource(R.color.light_green)),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+            ) {
+                Text(
+                    text = "Start a new Call",
+                    color = Color.White,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             Text(
-                text = "No recent calls",
-                modifier = Modifier.padding(16.dp),
-                fontSize = 16.sp,
-                color = Color.Gray
+                text = "Recent Calls",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
             )
+
+            LazyColumn {
+                items(dummyCalls) { call ->
+                    CallItemDesign(call)
+                }
+            }
         }
     }
 }

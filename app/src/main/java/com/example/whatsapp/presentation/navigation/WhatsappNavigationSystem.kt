@@ -16,7 +16,7 @@ import com.example.whatsapp.presentation.welcomescreen.WelcomeScreen
 fun WhatsappNavigationSystem() {
     val navController = rememberNavController()
 
-    NavHost(
+    /*NavHost(
         navController = navController,
         startDestination = Routes.SplashScreen
     ) {
@@ -43,5 +43,34 @@ fun WhatsappNavigationSystem() {
         composable<Routes.CallScreen> {
             CallScreen()
         }
+    }*/
+    NavHost(
+        navController = navController,
+        startDestination = Routes.SplashScreen.route
+    ) {
+        // Navigation Graph
+        composable(Routes.SplashScreen.route) {
+            SplashScreen(navController)
+        }
+        composable(Routes.WelcomeScreen.route) {
+            WelcomeScreen(navController)
+        }
+        composable(Routes.UserRegisterScreen.route) {
+            UserRegistrationScreen()
+        }
+        composable(Routes.HomeScreen.route) {
+            HomeScreen()
+        }
+        composable(Routes.UpdateScreen.route) {
+            UpdateScreen()
+        }
+        composable(Routes.CommunityScreen.route) {
+            CommunityScreen()
+        }
+        composable(Routes.CallScreen.route) {
+            CallScreen()
+        }
     }
+
 }
+
