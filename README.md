@@ -5,11 +5,17 @@ This repository contains the frontend of a WhatsApp clone, named MetaLink, built
 📌 Features
 
 Splash Screen: Engaging intro screen with app branding.
+
 Welcome/Login Screens: Intuitive onboarding for user authentication.
+
 Chat Interface: WhatsApp-style chat UI with message bubbles.
+
 Call Screen UI: Mock interface for audio and video calls.
+
 Update/Profile Screens: User settings and profile management.
+
 Navigation: Seamless transitions between screens using Jetpack Navigation.
+
 Responsive Design: Supports multiple Android screen sizes and orientations.
 
 
