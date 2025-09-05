@@ -14,6 +14,7 @@ Responsive Design: Supports multiple Android screen sizes and orientations.
 
 
 📂 Project Structure
+
 <img width="462" height="666" alt="image" src="https://github.com/user-attachments/assets/cb063c8d-2912-4f5f-9100-9c467195d2f1" />
 
 
@@ -54,30 +55,37 @@ Click Run to launch the app.
 📸 Sample UI
 
 Home Screen
+
 <img width="392" height="819" alt="image" src="https://github.com/user-attachments/assets/a51d4014-dd36-4dd4-85b5-955c98434dd4" />
 
 
 Splash Screen
+
 <img width="358" height="765" alt="image" src="https://github.com/user-attachments/assets/64d32f64-a0b7-4cd0-a9b0-3ae705fa3639" />
 
 
 Welcome Screen
+
 <img width="363" height="767" alt="image" src="https://github.com/user-attachments/assets/8da33e04-d21f-472d-bc1b-af6594f51c07" />
 
 
 User Registration Screen
+
 <img width="393" height="820" alt="image" src="https://github.com/user-attachments/assets/6b5bdf7e-2b2d-46c1-96ea-cc3a4f3af21e" />
 
 
 Update Screen
+
 <img width="387" height="823" alt="image" src="https://github.com/user-attachments/assets/7e47f127-1a18-49cd-9c0e-dde48813ce3a" />
 
 
 Call Screen
+
 <img width="359" height="766" alt="image" src="https://github.com/user-attachments/assets/6396e08e-13bc-4401-b722-76740aed78fb" />
 
 
 Community Screen
+
 <img width="392" height="828" alt="image" src="https://github.com/user-attachments/assets/282cb86a-896b-444a-ac44-bccce759833b" />
 
 
